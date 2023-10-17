@@ -1,31 +1,39 @@
 import propTypes from 'prop-types';
 import { useState } from 'react';
 
-const Card = ( {name, price, picture, description} ) => {
 
+const Card = ( {name, price, picture, description, total, setTotal} ) => {
     const [item, setItem] = useState(0);
 
     const handleLess = () => {
         setItem(item - 1)
+        setTotal(total - 1)
+        
     }
     const handleMore = () => {
         setItem(item + 1)
+        setTotal(total + 1)
     }
+
 
     return (
         <div className="card">
             <div className="image-container">
                 <img src={picture} alt={name} />
             </div>
-            <div>
-                <p className="name">{name}</p>
-                <p className="description">{description}</p> 
-            </div>
-            <div>
-                <p className="price">{price} EUR</p>
-                {item > 0 && <button onClick={handleLess}>-</button>}
-                <p>{item}</p>
-                <button onClick={handleMore}>+</button>
+            <div className="product-information">
+                <div className="left">
+                    <p className="product-name">{name}</p>
+                    <p className="blurb">{description}</p> 
+                </div>
+                <div className="right">
+                    <p className="price">{price} EUR</p>
+                    <div className='button'>
+                        {item > 0 && <button onClick={handleLess}>-</button>}
+                        <p>{item}</p>
+                        <button onClick={handleMore}>+</button>
+                    </div>
+                </div>
             </div>
         </div>
     );
@@ -35,7 +43,9 @@ Card.propTypes = {
     name: propTypes.string.isRequired,
     price: propTypes.number.isRequired,
     picture: propTypes.string.isRequired,
-    description: propTypes.string.isRequired
+    description: propTypes.string.isRequired,
+    total: propTypes.number.isRequired,
+    setTotal: propTypes.func.isRequired
 }
 
 export default Card;

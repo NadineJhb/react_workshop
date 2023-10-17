@@ -1,7 +1,27 @@
 // import React from 'react';
 import NavBar from './components/NavBar'
 import Card from './components/Card';
+import { useState } from 'react';
 import './App.css';
+
+const App = () => {
+
+  const [total, setTotal] = useState(0)
+
+  return (
+    <div id="page">
+      <NavBar total={total} setTotal={setTotal} />
+      <div className="shop">
+      {liste.map((item) => {
+        return <Card key={item.name} name={item.name} price={item.price} picture={item.picture} description={item.description} total={total} setTotal={setTotal} />
+      })}
+      </div>
+    </div>
+  );
+};
+
+export default App;
+
 
 const liste = [
   {
@@ -27,20 +47,29 @@ const liste = [
     price: 20.9,
     picture: "https://images.unsplash.com/photo-1577733966973-d680bffd2e80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2670&q=80",
     description: "Run wild"
-  }
+  },
+  {
+    name:"Sacs à dos",
+    price: 20.9,
+    picture: "https://images.unsplash.com/photo-1577733966973-d680bffd2e80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2670&q=80",
+    description: "Run wild"
+  },
+  {
+    name:"Sacs à dos",
+    price: 20.9,
+    picture: "https://images.unsplash.com/photo-1577733966973-d680bffd2e80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2670&q=80",
+    description: "Run wild"
+  },
+  {
+    name:"Sacs à dos",
+    price: 20.9,
+    picture: "https://images.unsplash.com/photo-1577733966973-d680bffd2e80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2670&q=80",
+    description: "Run wild"
+  },
+  {
+    name:"Sacs à dos",
+    price: 20.9,
+    picture: "https://images.unsplash.com/photo-1577733966973-d680bffd2e80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2670&q=80",
+    description: "Run wild"
+  }, 
   ]
-
-const App = () => {
-  return (
-    <div id="page">
-      <NavBar />
-      <div className="shop">
-      {liste.map((item) => {
-        return <Card key={item.name} name={item.name} price={item.price} picture={item.picture} description={item.description} />
-      })}
-      </div>
-    </div>
-  );
-};
-
-export default App;

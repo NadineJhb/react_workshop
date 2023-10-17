@@ -1,4 +1,5 @@
 #page{
+  background-color: rgba(131, 147, 160, 0.1);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -8,14 +9,59 @@
   display: flex;
   flex-wrap: wrap;
   width: 60%;
+  gap: 5%;
+  justify-content: space-between;
+
 }
 
 .card{
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 47%;
+  gap: 2%;
+  border: 1px solid grey;
+  border-radius: 5px;
+  box-shadow: 5px 5px 15px -5px rgba(0,0,0,0.31);
+  margin-bottom: 20px;
+  background-color: #fff;
 }
 
 .image-container{
   width: 100%;
+  height: 70%;
+  overflow: hidden;
+}
+
+img {
+  width : 100%;
+}
+
+.button {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+button {
+  padding: 0px 5px;
+}
+
+.price {
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-align: right;
+}
+
+.product-information {
+  display: flex;
+  justify-content: space-around;
+} 
+
+.product-name {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.blurb {
+  font-size: 1.6rem;
 }

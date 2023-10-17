@@ -5,11 +5,14 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
 }
 
 .logo-container {
     width: 4rem;
+    padding: .4rem;
+    margin-left: 2rem;
 }
 
 .logo-container img {
@@ -18,8 +21,24 @@ nav {
     object-fit: cover;
 }
 
+.wildShop {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    color: #fff;
+}
+
 .links {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 2rem;
+    color: white;
+    padding-right: 2rem;
+}
+
+.links p:last-child {
+    margin-left: 6rem;
+    display: flex;
+    align-items: center;
+    gap: .6rem;
 }
