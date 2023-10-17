@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-family: "Montserrat";
 }
 
 .shop {
@@ -24,6 +25,10 @@
   box-shadow: 5px 5px 15px -5px rgba(0,0,0,0.31);
   margin-bottom: 20px;
   background-color: #fff;
+}
+
+.card:hover img {
+  opacity: 85%;;
 }
 
 .image-container{

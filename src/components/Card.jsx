@@ -2,17 +2,19 @@ import propTypes from 'prop-types';
 import { useState } from 'react';
 
 
-const Card = ( {name, price, picture, description, total, setTotal} ) => {
+const Card = ( {name, price, picture, description, total, setTotal, count, setCount} ) => {
     const [item, setItem] = useState(0);
 
     const handleLess = () => {
         setItem(item - 1)
         setTotal(total - 1)
+        setCount(count + price)
         
     }
     const handleMore = () => {
         setItem(item + 1)
         setTotal(total + 1)
+        setCount(count + price)
     }
 
 
@@ -45,7 +47,9 @@ Card.propTypes = {
     picture: propTypes.string.isRequired,
     description: propTypes.string.isRequired,
     total: propTypes.number.isRequired,
-    setTotal: propTypes.func.isRequired
+    setTotal: propTypes.func.isRequired,
+    count: propTypes.number.isRequired,
+    setCount: propTypes.func.isRequired
 }
 
 export default Card;
